@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="light">
+
+  <!-- ── Settings Modal ── -->
+  <div id="settings-overlay" class="hidden">
+    <div class="modal">
+      <h2>Settings</h2>
+
+      <label>Your Name</label>
+      <input type="text" id="setting-name" placeholder="Enter your name" />
+
+      <label>Pomodoro Duration (minutes)</label>
+      <input type="number" id="setting-pomodoro" min="1" max="120" value="25" />
+
+      <div class="modal-actions">
+        <button id="save-settings">Save</button>
+        <button id="close-settings">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Header toolbar ── -->
+  <header>
+    <span class="app-title">Life Dashboard</span>
+    <div class="header-controls">
+      <button id="settings-btn" title="Settings">⚙ Settings</button>
+      <button id="theme-toggle" title="Toggle theme">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <!-- ── Main content ── -->
+  <main>
+
+    <!-- Greeting card -->
+    <section class="card greeting-card" id="greeting-section">
+      <div id="clock">00:00:00</div>
+      <div id="date-display">Loading...</div>
+      <div id="greeting">Hello!</div>
+    </section>
+
+    <!-- Middle row: Timer + Tasks -->
+    <div class="row">
+
+      <!-- Focus Timer -->
+      <section class="card timer-card">
+        <h2>Focus Timer</h2>
+        <div id="timer-display">25:00</div>
+        <div class="timer-controls">
+          <button id="start-btn">Start</button>
+          <button id="stop-btn">Stop</button>
+          <button id="reset-btn">Reset</button>
+        </div>
+      </section>
+
+      <!-- To-Do List -->
+      <section class="card todo-card">
+        <h2>Tasks</h2>
+        <div class="todo-input-row">
+          <input type="text" id="task-input" placeholder="Add a new task..." />
+          <button id="add-task-btn">Add</button>
+        </div>
+        <ul id="task-list"></ul>
+      </section>
+
+    </div><!-- /.row -->
+
+    <!-- Quick Links -->
+    <section class="card links-card">
+      <h2>Quick Links</h2>
+      <div class="link-input-row">
+        <input type="text" id="link-name" placeholder="Link name" />
+        <input type="url"  id="link-url"  placeholder="https://..." />
+        <button id="add-link-btn">Add Link</button>
+      </div>
+      <div id="links-container"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
